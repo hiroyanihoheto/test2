@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>検索結果</title>
+</head>
+
+<body>
+<h1>検索結果</h1>
+
+<br>
+<th:block th:if="${userList}">
+<table border ="1">
+<tr>
+<th>会員ID</th>
+<th>会員氏名</th>
+<th>メールアドレス</th>
+<th>パスワード</th>
+<th>電話番号</th>
+<th>生年月日</th>
+<th>郵便番号</th>
+<th>住所</th>
+<th>登録日</th>
+</tr>
+<tr th:each="userList:${userList}">
+<td th:text="${userList.userId}"></td>
+<td th:text="${userList.userName}"></td>
+<td th:text="${userList.mail}"></td>
+<td th:text="${userList.pass}"></td>
+<td th:text="${userList.phone}"></td>
+<td th:text="${userList.birth}"></td>
+<td th:text="${userList.post}"></td>
+<td th:text="${userList.address}"></td>
+<td th:text="${userList.register}"></td>
+<td><input type="submit" value="変更する"></td>
+</tr>
+
+</table>
+
+<td><form action="/edit" method="GET">
+<input type="submit" value="変更する"></form>
+<input type="hidden" name="userId" th:value="${userList.userId}">
+<input type="hidden" name="userName" th:value="${userList.userName}">
+<input type="hidden" name="userMail" th:value="${userList.userMail}">
+<input type="hidden" name="userPass" th:value="${userList.userMail}">
+<input type="hidden" name="userPhone" th:value="${userList.userPhone}">
+<input type="hidden" name="userBirth" th:value="${userList.userBirth}">
+<input type="hidden" name="userPost" th:value="${buserList.userPost}">
+<input type="hidden" name="userAddress" th:value="${userList.userAddress}">
+<input type="hidden" name="userRegister" th:value="${userList.uswrRegister}">
+</th:block>
+<a href="/admin_top">戻る</a>
+</body>
+</html>

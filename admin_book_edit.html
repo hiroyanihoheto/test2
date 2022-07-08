@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="UTF-8" >
+<title>教科書情報変更</title>
+</head>
+
+<body>
+<div style = "padding-left:5%;">
+<h1>教科書情報変更</h1>
+</div>
+
+<div style="padding-left:10%;">
+<form action="/index"method="post">
+<label>
+ISBN
+<ul><input type="text" name="name" autocomplete="name" placeholder="ISBN（10桁）"></ul>
+</label>
+<label>
+教科書名
+<ul><input type="text" name="name" autocomplete="name" placeholder="教科書名"></ul>
+</label>
+<label>
+著者名
+<ul><input type="text" name="name" placeholder="著者名"></ul>
+</label>
+<label>
+分類コード
+<ul><input type="password" name="pass" placeholder="入力してください"></ul>
+</label>
+<label>
+状態
+<ul><input type="text" name="tel" autocomplete="phone" placeholder="ハイフンなし"></ul>
+</label>
+<label>
+売値
+<ul><input type="text" name="postalCode" autocomplete="postal-code" placeholder="ハイフンなし" size="7"><br></ul>
+</label>
+
+
+
+
+</form>
+</div>
+<br>
+<div style="text-align:center">
+<input type="submit" name="edit" value="変更する"  size="5"><br>
+<input type="submit" name="delete" value="退会させる"  size="5">
+</div>
+<div style="padding-left:10%;"><a href="/admin_top">戻る</a></div>
+</body>
+</html>
