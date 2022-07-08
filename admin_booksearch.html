@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="UTF-8" >
+<title>教科書検索</title>
+</head>
+
+<body>
+<div style="text-align:center">
+<h1>教科書検索</h1>
+<span th:text="${bk_err_msg}" style="color:RED"></span>
+<form action="/index"method="post">
+教科書名
+<input type="text" name="userNode" placeholder="入力してください"><input type="submit"value="検索">
+</form>
+<br>
+</div>
+
+
+<div th:if= "${result != null}">
+<h1>教科書検索結果</h1>
+
+<br>
+<th:block th:if="${userList}">
+<table border ="1">
+<tr>
+<th>在庫ID</th>
+<th>ISBN</th>
+<th>教科書名</th>
+<th>著者</th>
+<th>分類コード</th>
+<th>状態</th>
+<th>備考</th>
+<th>販売価格</th>
+<th>登録日</th>
+
+</tr>
+<tr th:each="bookList:${bookList}">
+<td th:text="${bookList.stockId}"></td>
+<td th:text="${bookList.isbn}"></td>
+<td th:text="${bookList.bookName}"></td>
+<td th:text="${bookList.auther}"></td>
+<td th:text="${bookList.category}"></td>
+<td th:text="${bookList.quality}"></td>
+<td th:text="${bookList.note}"></td>
+<td th:text="${bookList.price}"></td>
+<td th:text="${bookList.register}"></td>
+<td><input type="submit" value="変更する"></td>
+</tr>
+
+</table>
+</div>
+
+<a href="/admin_top">戻る</a>
+</body>
+</html>
