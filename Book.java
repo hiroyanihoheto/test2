@@ -16,13 +16,13 @@ public class Book {
 	private int bookId;
 
 	@Column(name = "isbn")
-	private int isbn;
+	private String isbn;
 
 	@Column(name = "book_name")
 	private String bookName;
 
-	@Column(name = "auther")
-	private String auther;
+	@Column(name = "author")
+	private String author;
 
 	@Column(name = "category_code")
 	private int catCode;
@@ -53,9 +53,9 @@ public class Book {
 
 	public Book(
 			int bookId,
-			int isbn,
+			String isbn,
 			String bookName,
-			String auther,
+			String author,
 			int catCode,
 			int qualCode,
 			int price,
@@ -68,7 +68,7 @@ public class Book {
 		this.bookId = bookId;
 		this.isbn = isbn;
 		this.bookName = bookName;
-		this.auther = auther;
+		this.author = author;
 		this.catCode = catCode;
 		this.qualCode = qualCode;
 		this.price = price;
@@ -83,7 +83,7 @@ public class Book {
 		return bookId;
 	}
 
-	public Integer getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
 
@@ -91,8 +91,8 @@ public class Book {
 		return bookName;
 	}
 
-	public String autther() {
-		return auther;
+	public String author() {
+		return author;
 	}
 
 	public Integer getCatCode() {
